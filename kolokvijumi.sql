@@ -8,19 +8,25 @@
 -- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+
 START TRANSACTION;
+
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */
+;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */
+;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */
+;
+/*!40101 SET NAMES utf8mb4 */
+;
 
 --
 -- Database: `kolokvijumi`
 --
 CREATE DATABASE IF NOT EXISTS `kolokvijumi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+
 USE `kolokvijumi`;
 
 -- --------------------------------------------------------
@@ -30,12 +36,13 @@ USE `kolokvijumi`;
 --
 
 DROP TABLE IF EXISTS `prijave`;
+
 CREATE TABLE `prijave` (
   `id` int(11) NOT NULL,
   `predmet` varchar(255) NOT NULL,
   `katedra` varchar(255) NOT NULL,
   `sala` varchar(255) NOT NULL,
-  `datum` date NOT NULL DEFAULT current_timestamp()
+  `datum` date NOT NULL DEFAULT (CURRENT_DATE)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -54,6 +61,7 @@ INSERT INTO `prijave` (`id`, `predmet`, `katedra`, `sala`, `datum`) VALUES
 --
 
 DROP TABLE IF EXISTS `user`;
+
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
@@ -74,14 +82,12 @@ INSERT INTO `user` (`id`, `username`, `password`) VALUES
 --
 -- Indexes for table `prijave`
 --
-ALTER TABLE `prijave`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `prijave` ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `user`
 --
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `user` ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -98,8 +104,12 @@ ALTER TABLE `prijave`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
+;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */
+;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */
+;
